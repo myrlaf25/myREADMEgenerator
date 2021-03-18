@@ -29,17 +29,10 @@ inquirer
         name: 'installation',
       },
     {
-        
-      type: 'checkbox',
-      message: 'What languages do you know?',
-      name: 'languages',
-      choices:["English", "Spanish", "French", "German"]
-    },
-    {
       type: 'list',
       message: 'What license did you use?',
       name: 'license',
-      choices: ["MIT License", "Apache License 2.0", "the Unlicense"]
+      choices: ["MIT License", "Apache License 2.0", "the Unlicense", "ISC"]
     },
     {
         type: 'input',
@@ -54,10 +47,10 @@ inquirer
 // const questions = [];
 
 // // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {}
 
 // // TODO: Create a function to initialize app
-// function init() {}
+function init() {}
 
 // // Function call to initialize app
-// init();
+init();
