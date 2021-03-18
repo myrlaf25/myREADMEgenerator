@@ -25,8 +25,23 @@ inquirer
     },
     {
         type: 'input',
+        message: 'Please provide a description of your project.',
+        name: 'description',
+      },
+    {
+        type: 'input',
         message: 'What are the steps required to install your app?',
         name: 'installation',
+      },
+      {
+        type: 'input',
+        message: 'What is the usage?',
+        name: 'usage',
+      },
+      {
+        type: 'input',
+        message: 'Whose credit is this work?',
+        name: 'credit',
       },
     {
       type: 'list',
@@ -36,8 +51,18 @@ inquirer
     },
     {
         type: 'input',
+        message: 'What are the test instructions?',
+        name: 'test',
+      },
+    {
+        type: 'input',
         message: 'GitHub username:',
-        name: 'github',
+        name: 'username',
+      },
+      {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
       },
   ])
   .then(function(data){
@@ -50,7 +75,7 @@ inquirer
 function writeToFile(fileName, data) {}
 
 // // TODO: Create a function to initialize app
-function init() {}
+function init(generateMarkdown) {}
 
 // // Function call to initialize app
 init();
