@@ -47,7 +47,7 @@ inquirer
       type: 'list',
       message: 'What license did you use?',
       name: 'license',
-      choices: ["MIT License", "Apache License 2.0", "the Unlicense", "ISC"]
+      choices: ["MIT License", "Apache License 2.0", "ISC"]
     },
     {
         type: 'input',
