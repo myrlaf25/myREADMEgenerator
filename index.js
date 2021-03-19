@@ -73,17 +73,6 @@ function writeToFile(fileName, data){
     fs.writeFile(fileName, generateMarkdown(data), ()=>{});
 }
 
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, generateMarkdown(data), function(err){
-//         console.log(fileName)
-//         console.log(data)
-//         if(err){
-//             return console.log(err)
-//         }else {
-//             console.log("Successful")
-//         }
-//     })
-// }
 
 // // TODO: Create a function to initialize app
 function init() {

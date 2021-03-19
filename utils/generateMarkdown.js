@@ -40,8 +40,6 @@ ${data.motivation}
 ${data.build}
 ${data.description}
 
-Link to walk-through video of this README app- 
-
 ## Table of Contents
 
 -[Description](#description)
@@ -61,19 +59,7 @@ ${data.installation}
 
 ${data.usage}
 
-Screenshot-terminal
-
-```md
-![alt text](assets/README-terminalscreenshot.png)
-```
-
-Screenshot- terminal-questions
-
-
-Screenshot-README.md file generated
-
-
-
+    
 ## Credits
 
 ${data.credit}
