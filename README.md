@@ -11,6 +11,7 @@ My motivation is to be able to create a README file that will help any developer
 I built this project in order to expand my abilities as a developer and to save time for the user while working on their project. This will create a professional README file quick and simple. 
 This application allows user to create a professional README.md file. This app uses Node.js and inquirer to create prompts for the user to answer some questions and then creates a README document, which will be generated, when the user responds to all prompts. 
 
+Link to walk-through video of this README app- https://youtu.be/i9xBpaW16r0 
 ## Table of Contents
 
 -[Description](#description)
