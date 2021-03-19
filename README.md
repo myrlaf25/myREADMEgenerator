@@ -31,7 +31,7 @@ The user will need to have node.js to run the program. If the user does not have
 
 When the user opens the terminal, the user will have to run node index.js. The application will prompt the user questions on the terminal to fill in the README file. Once all questions have been answered, a README.md file will be generated. 
 
-<img src="./assets/README-terminal screenshot" alt="photo holder">
+<img src="./assets/README-terminalscreenshot" alt="photo holder">
 
 ## Credits
 
