@@ -1,20 +1,25 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]
-    [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)]
-    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
-    [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-
+    if(license === "Apache-2.0")
+    return `<img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></img>`
+    if(license === "ISC")
+    return `<img src="https://img.shields.io/badge/License-ISC-blue.svg"></img>`
+    if(license === "MIT")
+    return `<img src="https://img.shields.io/badge/License-MIT-yellow.svg"></img>`
+    
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-    (https://opensource.org/licenses/Apache-2.0)
-    (https://opensource.org/licenses/ISC)
-    (https://opensource.org/licenses/MIT)
-    (http://unlicense.org/)
+    if(license === "Apache-2.0")
+    return "https://opensource.org/licenses/Apache-2.0"
+    if(license === "ISC")
+    return "https://opensource.org/licenses/ISC"
+    if(license === "MIT")
+    return "https://opensource.org/licenses/MIT"
+    
 }
 
 // TODO: Create a function that returns the license section of README
@@ -23,48 +28,69 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+    
   return `
-  ## ${data.title}
-
+##${data.title}
+\n\n
+${renderLicenseBadge(data.license)}
 
 ## Description
-![License](https://img.shields.io/badge/License-${response.license}-blue.svg "License Badge")
+
 ${data.motivation}
 ${data.build}
 ${data.description}
 
+Link to walk-through video of this README app- 
 
-## Table of Contents (Optional)
+## Table of Contents
+
 -[Description](#description)
 -[Installation](#installation)
 -[Usage](#usage)
--[Credit](#credit)
+-[Credits](#credits)
 -[License](#license)
--[Test](#test)
+-[Tests](#tests)
 
 
 ## Installation
+
 ${data.installation}
 
 
 ## Usage
+
 ${data.usage}
+
+Screenshot-terminal
+
+```md
+![alt text](assets/README-terminalscreenshot.png)
+```
+
+Screenshot- terminal-questions
+
+
+Screenshot-README.md file generated
+
 
 
 ## Credits
+
 ${data.credit}
 
 
 ## License
 
 For more information on the License, please click on the link: 
--[License] (https://opensource.org/licenses/${data.license})
+-[License] ${renderLicenseLink(data.license)}
 
 
 ## Tests
 ${data.test}
 
 -[GitHub] {https://github.com/${data.username}}
+
+##Questions
 To contact me directly, please email me at: ${data.email}.
 
 `;

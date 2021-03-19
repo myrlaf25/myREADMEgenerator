@@ -3,10 +3,11 @@
 const fs = require("fs")
 //NPM modules
 const inquirer = require("inquirer");
+const util = require("util");
+const generateMarkdown = require ("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
-inquirer
-  .prompt([
+const questions =[
     {
         //these are an array of question objects
       type: 'input',
@@ -15,12 +16,12 @@ inquirer
     },
     {
       type: 'input',
-      message: 'What was your motivation?',
+      message: 'What was your motivation for this app?',
       name: 'motivation',
     },
     {
       type: 'input',
-      message: 'Why did you build this project?',
+      message: 'Why did you build this app?',
       name: 'build',
     },
     {
@@ -40,14 +41,14 @@ inquirer
       },
       {
         type: 'input',
-        message: 'Whose credit is this work?',
+        message: 'Whose credit is this work? List any and all contributors.',
         name: 'credit',
       },
     {
       type: 'list',
-      message: 'What license did you use?',
+      message: 'What license did you use? Provide instructions to include dependecies.',
       name: 'license',
-      choices: ["MIT License", "Apache License 2.0", "ISC"]
+      choices: ["MIT", "Apache-2.0", "ISC"]
     },
     {
         type: 'input',
@@ -63,19 +64,35 @@ inquirer
         type: 'input',
         message: 'What is your email address?',
         name: 'email',
-      },
-  ])
-  .then(function(data){
-      console.log(data);
-  });
+      }
+  ]
 
-// const questions = [];
 
 // // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data){
+    fs.writeFile(fileName, generateMarkdown(data), ()=>{});
+}
+
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, generateMarkdown(data), function(err){
+//         console.log(fileName)
+//         console.log(data)
+//         if(err){
+//             return console.log(err)
+//         }else {
+//             console.log("Successful")
+//         }
+//     })
+// }
 
 // // TODO: Create a function to initialize app
-function init(generateMarkdown) {}
+function init() {
+    inquirer.prompt(questions)
+    .then(function(data){
+        writeToFile("README.md", data);
+        console.log(data)
+    });
+}
 
 // // Function call to initialize app
 init();
